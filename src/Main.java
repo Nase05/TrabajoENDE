@@ -1,15 +1,24 @@
+import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
 		Operaciones operaciones = new Operaciones();
+		Scanner teclado = new Scanner(System.in);
+		
 		//Método de factorial
-		System.out.println(operaciones.factorial(5));
+		int numero;
+		
+		System.out.println("Escribe un número para saber su factorial");
+		numero = Integer.parseInt(teclado.nextLine());
+		System.out.println("El factorial de " + numero + " es: " + operaciones.factorial(numero));
 		
 		//Método de esPrimo
-		if (Operaciones.esPrimo(2)) {
-			System.out.println("Es primo");
+		System.out.println("Escribe un número para saber si es primo");
+		numero = Integer.parseInt(teclado.nextLine());
+		if (Operaciones.esPrimo(numero)) {
+			System.out.println(numero + " es primo");
 		} else {
-			System.out.println("No es primo");
+			System.out.println(numero + " no es primo");
 		}
 		
 	}
